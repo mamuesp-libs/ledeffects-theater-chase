@@ -1,0 +1,24 @@
+author: M.Mueller-Spaeth "mamuesp" <fms1961@gmail.com>
+type: lib
+description: A "theater chase" effect with RGB LEDs
+version: 1.0
+
+sources:
+  - src
+
+filesystem:
+  - fs
+
+config_schema:
+  - ["ledeffects.theater_chase", "o", {title: ""}] 
+  - ["ledeffects.theater_chase.timeout", "i", 35, {title: ""}]
+  - ["ledeffects.theater_chase.gap", "i", 2, {title: ""}]
+  - ["ledeffects.theater_chase.group", "i", 3, {title: ""}]
+  - ["ledeffects.theater_chase.dim_all", "d", 0.33, {title: "Dimming of the LED over all colors"}]
+  
+libs:
+
+tags:
+  - c
+
+manifest_version: 2017-09-29
