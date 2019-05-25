@@ -115,7 +115,7 @@ void mgos_ledeffects_theater_chase(void* param, mgos_rgbleds_action action)
     }
 }
 
-bool mgos_theater_chase_init(void) {
+bool mgos_ledeffects_theater_chase_init(void) {
   LOG(LL_INFO, ("mgos_theater_chase_init ..."));
   ledmaster_add_effect("ANIM_THEATER_CHASE", mgos_ledeffects_theater_chase);
   return true;
