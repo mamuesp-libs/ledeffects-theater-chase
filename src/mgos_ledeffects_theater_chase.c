@@ -39,7 +39,7 @@ static theater_chase_data* mgos_intern_theater_chase_init(mgos_rgbleds* leds)
         curr_tcd->chase_pix = curr_tcd->chase_color;
     }
     
-    mgos_universal_clear(leds);
+    mgos_universal_led_clear(leds);
     mgos_universal_led_show(leds);
 
     return result;
