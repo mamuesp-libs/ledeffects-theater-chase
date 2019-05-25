@@ -39,8 +39,8 @@ static theater_chase_data* mgos_intern_theater_chase_init(mgos_rgbleds* leds)
         curr_tcd->chase_pix = curr_tcd->chase_color;
     }
     
-    mgos_rgbleds_clear(leds);
-    mgos_rgbleds_show(leds);
+    mgos_universal_clear(leds);
+    mgos_universal_led_show(leds);
 
     return result;
 }
@@ -68,7 +68,7 @@ static void mgos_intern_theater_chase_loop(mgos_rgbleds* leds)
         }
 
         LOG(LL_VERBOSE_DEBUG, ("Show LEDs in theater chase ..."));
-        //mgos_rgbleds_set_all(leds, curr_tcd->out_pix);
+        //mgos_universal_led_set_all(leds, curr_tcd->out_pix);
         for (int i = 0; i < num_rows; i++) {
             int range_pos = (i % (curr_tcd->group + curr_tcd->gap));
             int y = (curr_tcd->pos + i) % num_rows;
@@ -77,12 +77,12 @@ static void mgos_intern_theater_chase_loop(mgos_rgbleds* leds)
             } else {
                 curr_pix = (y < curr_tcd->pos) ? curr_tcd->chase_pix : curr_tcd->out_pix;
             }
-            mgos_rgbleds_plot_pixel(leds, x, y, curr_pix, true);
+            mgos_universal_led_plot_pixel(leds, x, y, curr_pix, true);
         }
         curr_tcd->pos++;
         curr_tcd->pos %= num_rows;
     }
-    mgos_rgbleds_show(leds);
+    mgos_universal_led_show(leds);
     mgos_wdt_feed();
     
 }
